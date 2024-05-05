@@ -1,0 +1,65 @@
+<div class="container">
+  <h1>Department Registration</h1>
+  <form>
+    <div>
+      <label for="departmentName">Department Name:</label>
+      <input type="text" class="form-control" id="departmentName" [(ngModel)]="departmentName" name="departmentName">
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <select class="form-control" [(ngModel)]="location" name="location">
+        <option value="">-Select-</option>
+        <option value="Bhubaneswar">Bhubaneswar</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Hydrabad">Hydrabad</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Noida">Noida</option>
+        <option value="Pune">Pune</option>
+        <option value="India">India</option>
+      </select>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email">
+    </div>
+    <div>
+      <label for="status">Status:</label><br>
+      <input type="radio" [(ngModel)]="status" name="status" value="Active"> Active
+      <input type="radio" [(ngModel)]="status" name="status" value="Inactive"> Inactive
+    </div>
+    <button type="button" class="btn btn-primary" (click)="handleRegClick()">Register</button>
+    <div class="msg">{{ msg }}</div>
+
+    <hr>
+
+    <h1> Departments </h1>
+    <button class="btn btn-link" (click)="showDepartments()">View All Departments</button>
+    <ul *ngIf="showAllDepartments">
+        <div>
+          <table border="1">
+
+            <tr>
+              <th>Department Name</th>
+              <th>Location</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Details</th>
+            </tr>
+            <tr *ngFor="let dept of departments">
+              <td>{{ dept.departmentName }}</td>
+              <td>{{ dept.location }}</td>
+              <td>{{ dept.email }}</td>
+              <td>{{ dept.status }}</td>
+              <td>
+                <button class="btn btn-link" (click)="getDepartmentById(dept.departmentId)">Details</button>
+              </td>
+            </tr>
+            <td></td>
+          </table>
+        </div>
+    </ul>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+.container {
+    width: 400px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    width: 100%;
+  }
+  
+  .msg {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+h1{
+    color: red;
+}  
+label{
+  color: green;
+}
+th{
+  color: green;
+}
